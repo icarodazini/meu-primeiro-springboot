@@ -1,10 +1,14 @@
 package com.example.meu_primeiro_springboot.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "produtos")
-public class    Produto {
+public class Produto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,8 +20,7 @@ public class    Produto {
     public Produto() {
     }
 
-    public Produto(Long id, String nome, Double preco) {
-        this.id = id;
+    public Produto(String nome, Double preco) {
         this.nome = nome;
         this.preco = preco;
     }
